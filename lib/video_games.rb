@@ -1,5 +1,7 @@
 require_relative "video_games/version"
 require_relative "video_games/cli"
+require_relative "video_games/upcoming_games"
+require_relative "video_games/scraping"
 
 require 'pry'
 
