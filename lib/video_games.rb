@@ -4,6 +4,7 @@ require_relative "video_games/upcoming_games"
 require_relative "video_games/scraping"
 
 require 'pry'
+require 'nokogiri'
 
 module VideoGames
   class Error < StandardError; end
