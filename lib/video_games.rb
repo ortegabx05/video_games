@@ -5,6 +5,7 @@ require_relative "video_games/scraping"
 
 require 'pry'
 require 'nokogiri'
+require 'open-uri'
 
 module VideoGames
   class Error < StandardError; end
