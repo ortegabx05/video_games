@@ -2,10 +2,10 @@ class VideoGames::CLI
 
  def call
   puts "Welcome to Gamestop!"
-  get_upcoming_games
-  list_games
-  get_user_name
-  release_date
+  #get_upcoming_games
+  #list_games
+  #pick_game
+  #release_date
  end
  
  def get_upcoming_games
@@ -18,7 +18,7 @@ class VideoGames::CLI
      puts "#{index}. #{game.title}"
  end
  
- def get_user_game
+ def pick_game
    chosen_game = gets.strip.to_i
    release_date(chosen_game) if valid_input(chosen_game, @upcoming_games)
  end
@@ -30,6 +30,6 @@ class VideoGames::CLI
  def release_date(chosen_game)
    game = @upcoming_game [chosen_game - 1]
    puts "The release date is #{game}"
- end
+   end
  end
 end

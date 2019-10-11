@@ -11,7 +11,7 @@ attr_accessor :title, :url
   end
   
   def self.all
-    VideoGames::Scaper.scrape_game if @@all.empty?
+    VideoGames::Scraper.scrape_games if @@all.empty?
     @@all
   end
   
