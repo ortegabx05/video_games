@@ -31,5 +31,5 @@ class VideoGames::CLI
    game = @upcoming_game [chosen_game - 1]
    puts "The release date is #{game}"
  end
- 
+ end
 end

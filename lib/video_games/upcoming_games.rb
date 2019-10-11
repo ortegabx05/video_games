@@ -1,9 +1,12 @@
-class VideoGames::UpcomingGames
-  @@all = []
-  attr_accessor :title :url
+  class VideoGames::UpcomingGames
+  
+attr_accessor :title, :url
+  
+    @@all = []
   
   def initialize(title)
     @title = title
+    @url = url
     save
   end
   
