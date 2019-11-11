@@ -1,12 +1,11 @@
 class VideoGames::Scraper
-  def self.scrape_games
-    doc = Nokogiri::HTML(open("https://www.gamestop.com/upcoming-video-games"))
+  def self.scrape_months
+    doc = Nokogiri::HTML(open("https://www.ign.com/upcoming/games"))
    
-   title = doc.css("div#pre-release h5")
-   
-   title.each do |t|
-   puts t.text
-    end
+    months = doc.css("div.jsx-190919334.month-container")
+
+    months.each do |m|
+     name = t.text
   end
   
 end

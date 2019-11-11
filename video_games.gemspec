@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Gets a list of upcoming video games and gets release date of specific game that the user picks.}
   spec.description   = %q{Gets a list of upcoming video games and gets release date of specific game that the user picks.}
-  spec.homepage      = "http://gamestop.com"
+  spec.homepage      = "http://ign.com"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -20,8 +20,8 @@ Gem::Specification.new do |spec|
     spec.metadata["allowed_push_host"] = "http://mygemserver.com"
 
     spec.metadata["homepage_uri"] = spec.homepage
-    spec.metadata["source_code_uri"] = "http://gamestop.com"
-    spec.metadata["changelog_uri"] = "http://gamestop.com"
+    spec.metadata["source_code_uri"] = "http://ign.com"
+    spec.metadata["changelog_uri"] = "http://ign.com"
   else
     raise "RubyGems 2.0 or newer is required to protect against " \
       "public gem pushes."

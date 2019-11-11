@@ -1,35 +1,20 @@
 class VideoGames::CLI
 
  def call
-  puts "Welcome to Gamestop!"
-  #get_upcoming_games
+  puts "IGN!"
+  #get_advertised_months
+  #get_user_months
+  #get_games_for(month) 
   #list_games
-  #pick_game
-  #release_date
+  #get_release_date
  end
  
- def get_upcoming_games
-   @upcoming_games = VideoGames::UpcomingGames.all
+ def get_months
+   @months = []
  end
  
- def list_games
-   puts"Here is an updated list of games being released soon."
-   @upcoming_games.each.with_index(1) do |game,index|
-     puts "#{index}. #{game.title}"
+ def user_months
+    @months.each.with_index(1) do |month,index|
+     puts "#{index}. #{month}
  end
- 
- def pick_game
-   chosen_game = gets.strip.to_i
-   release_date(chosen_game) if valid_input(chosen_game, @upcoming_games)
- end
- 
- def valid_input(input,data)
-   input.to_i <= data.length && input.to_i > 0
- end
- 
- def release_date(chosen_game)
-   game = @upcoming_game [chosen_game - 1]
-   puts "The release date is #{game}"
-   end
- end
-end
+   
