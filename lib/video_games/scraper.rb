@@ -7,5 +7,5 @@ class VideoGames::Scraper
     months.each do |m|
      name = t.text
   end
-  
+end
 end
