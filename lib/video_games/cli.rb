@@ -1,7 +1,7 @@
 class VideoGames::CLI
 
  def call
-   puts "Welcome to IGN!"
+   puts "\nWelcome to IGN!\n"
    get_games
    list_games
    user_games
@@ -30,7 +30,15 @@ class VideoGames::CLI
  def show_details_for(chosen_game)
    game = @games[chosen_game - 1]
    puts game.name
-   puts "#{game.release_date} and #{game.platform}"
+   puts "The release date is on #{game.release_date} for the following platform(s) #{game.platform}"
+   puts "Would you like to choose another game? (y/n)"
+   input = gets.chomp
+   if input == "y" || input == "Y" 
+     list_games
+     user_games
+   elsif input == "n" || input == "N"
+     puts "Until next time!, Happy Gaming!"
+   end
  end
- 
+
 end
