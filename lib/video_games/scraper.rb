@@ -1,22 +1,16 @@
 class VideoGames::Scraper
   
  def self.scrape_games
-    doc = Nokogiri::HTML(open("https://www.ign.com/upcoming/games"))
-    games = doc.css("button.jsx-3959444234.title.link")
-    games.each do |m|
-    name = m.text
-    VideoGames::Game.new(name, "Nov 16", "android")
+  doc = Nokogiri::HTML(open("https://www.ign.com/upcoming/games"))
+  games = doc.css("div.page-content div.card")
+
+  games.each do |thing|
+  name = thing.css("button.title.link").text.strip
+  release_date = thing.css("div.release-date").text.strip
+  platform = thing.css("div.platform").text.strip
+  puts name, release_date, platform
+    VideoGames::Game.new(name, release_date , platform)
    end
  end
 
-
-# def self.scrape_games(month)
-#   doc = Nokogiri::HTML(open("https://www.ign.com/upcoming/games"))
-#     games = doc.css("div.jsx-3959444234.platform")
-#     games.each do |g|
-#     name = g.text
-#     VideoGames::Games.new(name,month)
-#   end
-# end
-  
 end

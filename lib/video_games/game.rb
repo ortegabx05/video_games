@@ -15,11 +15,7 @@ class VideoGames::Game
     @@all
  end
   
-  
-# def get_games
-#     VideoGames::Scraper.scrape_games(self)  if @games.empty?
-# end
-  
+
  def save
     @@all << self
  end
