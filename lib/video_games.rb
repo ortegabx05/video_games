@@ -1,8 +1,7 @@
 require_relative "video_games/version"
 require_relative "video_games/cli"
-require_relative "video_games/month"
+require_relative "video_games/game"
 require_relative "video_games/scraper"
-require_relative "video_games/games"
 
 
 require 'pry'

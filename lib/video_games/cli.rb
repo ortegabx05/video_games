@@ -2,38 +2,35 @@ class VideoGames::CLI
 
  def call
    puts "Welcome to IGN!"
-   get_months
-   list_months
-   user_months
+   get_games
+   list_games
+   user_games
  end
  
- def get_months
-   @months = VideoGames::Month.all
+ def get_games
+   @games = VideoGames::Game.all
  end
  
- def list_months
+ def list_games
    puts "Here is a list of games for this month:"
-   @months.each.with_index(1) do |month,index|
-   puts "#{index}. #{month.name}"
+   @games.each.with_index(1) do |game,index|
+   puts "#{index}. #{game.name}"
    end
  end
  
- def user_months
-   chosen_month = gets.strip.to_i
-   show_games_for(chosen_month) if valid_input(chosen_month, @months)
+ def user_games
+   chosen_game = gets.strip.to_i
+   show_details_for(chosen_game) if valid_input(chosen_game, @games)
  end
  
  def valid_input(input,data)
    input.to_i <= data.length && input.to_i > 0
  end
  
- def show_games_for(chosen_months)
-   month = @months[chosen_months - 1]
-   month.get_games
-   puts "The following game will be released on"
-   month.games.each.with_index(1) do |game,idx|
-  puts "#{idx}. #{game.name}"
-   end
+ def show_details_for(chosen_game)
+   game = @games[chosen_game - 1]
+   puts game.name
+   puts "#{game.release_date} and #{game.platform}"
  end
  
 end
